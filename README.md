@@ -6,6 +6,7 @@ Will gradually publish my solutions.
 
 These are my personal stats:
 
+<pre>
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
  19   13:20:13  10918      0   15:56:09   8929      0
@@ -27,6 +28,6 @@ Day       Time   Rank  Score       Time   Rank  Score
   3   02:42:20  16095      0   02:48:05  14797      0
   2   03:45:17  19905      0   03:50:30  18399      0
   1   08:12:55  30134      0   08:15:12  27372      0
-
+</pre>
 
 Looking forward to 2021!
