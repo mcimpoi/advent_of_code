@@ -1,5 +1,3 @@
-import os
-
 INPUT_FILE_P1 = "data/day_01.txt"
 
 
