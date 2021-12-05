@@ -43,7 +43,7 @@ def solve_day4_p1(input_file: str) -> int:
     return 0
 
 
-def solve_day4_p1(input_file: str) -> int:
+def solve_day4_p2(input_file: str) -> int:
     with open(input_file, "r") as f:
         lines = [line_.strip() for line_ in f.readlines() if len(line_) > 1]
 
@@ -111,4 +111,4 @@ def board_val(board, num) -> int:
 
 if __name__ == "__main__":
     print(solve_day4_p1(INPUT_FILE))
-    # print(solve_day4_p2(INPUT_FILE))
+    print(solve_day4_p2(INPUT_FILE))
