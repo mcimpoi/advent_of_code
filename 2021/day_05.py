@@ -23,33 +23,7 @@ def parse_input(input_file: str) -> List[Tuple[int]]:
     return coords
 
 
-def solve_day5_p1(input_file: str) -> int:
-    coords = parse_input(input_file)
-
-    mapping = defaultdict(int)
-    cnt = 0
-
-    for line in coords:
-        x1, y1, x2, y2 = line
-        if (x1 == x2):
-            step = 1 if y1 < y2 else -1
-
-            for yy in range(y1, y2 + step, step):
-                mapping[x1 * OFFSET + yy] += 1
-                if mapping[x1 * OFFSET + yy] == 2:
-                    cnt += 1
-
-        if (y1 == y2):
-            step = 1 if x1 < x2 else -1
-            for xx in range(x1, x2 + step, step):
-                mapping[xx * OFFSET + y1] += 1
-                if mapping[xx * OFFSET + y1] == 2:
-                    cnt += 1
-
-    return cnt
-
-
-def solve_day5_p2(input_file: str) -> int:
+def solve(input_file: str, keep_diagonals: bool = False) -> int:
     coords = parse_input(input_file)
 
     cnt = 0
@@ -61,29 +35,24 @@ def solve_day5_p2(input_file: str) -> int:
         dx = 0 if x1 == x2 else 1 if x1 < x2 else -1
         dy = 0 if y1 == y2 else 1 if y1 < y2 else -1
 
-        if dx == 0:
-            step = 1 if y1 < y2 else -1
-
-            for yy in range(y1, y2 + dy, dy):
-                mapping[x1 * OFFSET + yy] += 1
-                if mapping[x1 * OFFSET + yy] == 2:
-                    cnt += 1
-
-        if dy == 0:
-            step = 1 if x1 < x2 else -1
-            for xx in range(x1, x2 + dx, dx):
-                mapping[xx * OFFSET + y1] += 1
-                if mapping[xx * OFFSET + y1] == 2:
-                    cnt += 1
-
-        if (dx * dy) != 0:
-            for step in range(abs(x1-x2) + 1):
-                x, y = x1 + step * dx, y1 + step * dy
-                mapping[x * OFFSET + y] += 1
-                if mapping[x * OFFSET + y] == 2:
-                    cnt += 1
+        if not (dx * dy == 0 or keep_diagonals):
+            continue
+        for step in range(max(abs(x1-x2), abs(y1 - y2)) + 1):
+            x, y = x1 + step * dx, y1 + step * dy
+            flat_pos = x * OFFSET + y
+            mapping[x * OFFSET + y] += 1
+            if mapping[x * OFFSET + y] == 2:
+                cnt += 1
 
     return cnt
+
+
+def solve_day5_p1(input_file: str) -> int:
+    return solve(input_file, keep_diagonals=False)
+
+
+def solve_day5_p2(input_file: str) -> int:
+    return solve(input_file, keep_diagonals=True)
 
 
 if __name__ == "__main__":
