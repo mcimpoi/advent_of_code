@@ -6,7 +6,9 @@ from collections import defaultdict
 from typing import List, Callable
 
 
-def solve_D02(password_policy: List[str], validator_func: Callable[[str, int, int, str], int]) -> int:
+def solve_D02(
+    password_policy: List[str], validator_func: Callable[[str, int, int, str], int]
+) -> int:
     num_good: int = 0
     for rule in password_policy:
         parts = rule.split()

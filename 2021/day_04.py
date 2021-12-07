@@ -95,11 +95,11 @@ def print_board(board):
 def check_board(board, rr, cc) -> bool:
     cnt1, cnt2 = 0, 0
     for r1 in range(BOARD_SZ):
-        if (board[BOARD_SZ * r1 + cc] < 0):
+        if board[BOARD_SZ * r1 + cc] < 0:
             cnt1 += 1
 
     for c1 in range(BOARD_SZ):
-        if (board[BOARD_SZ * rr + c1] < 0):
+        if board[BOARD_SZ * rr + c1] < 0:
             cnt2 += 1
 
     return cnt1 == BOARD_SZ or cnt2 == BOARD_SZ

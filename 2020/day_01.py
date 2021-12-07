@@ -2,7 +2,7 @@
 from typing import List
 import logging
 
-logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
@@ -17,7 +17,8 @@ def solve_D01_P1(numbers: List[int]) -> int:
         for jj in range(ii + 1, len(numbers)):
             if numbers[ii] + numbers[jj] == 2020:
                 logger.info(
-                    f"Found {numbers[ii]} at index {ii} and {numbers[jj]} at index {jj}")
+                    f"Found {numbers[ii]} at index {ii} and {numbers[jj]} at index {jj}"
+                )
                 return numbers[ii] * numbers[jj]
 
     # We are guaranteed solution exists.

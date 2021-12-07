@@ -12,7 +12,7 @@ def solve_day3_p1(input_file: str) -> int:
 
     for line in lines:
         for ii in range(nbits):
-            counts[ii] += (line[ii] == "1")
+            counts[ii] += line[ii] == "1"
 
     g = 0
     e = 0
@@ -23,7 +23,7 @@ def solve_day3_p1(input_file: str) -> int:
         g += crtBit
 
         e *= 2
-        e += (1 - crtBit)
+        e += 1 - crtBit
 
     return g * e
 
@@ -44,16 +44,19 @@ def solve_day3_p2(input_file: str) -> int:
             break
 
         for line in lines:
-            if line[ii] == '1':
+            if line[ii] == "1":
                 count1 += 1
 
-        lines = [x for x in lines if x[ii] == "1"] if count1 >= len(
-            lines) / 2 else [x for x in lines if x[ii] == "0"]
+        lines = (
+            [x for x in lines if x[ii] == "1"]
+            if count1 >= len(lines) / 2
+            else [x for x in lines if x[ii] == "0"]
+        )
 
     res_o = 0
     for x in range(nbits):
         res_o *= 2
-        res_o += (lines[0][x] == "1")
+        res_o += lines[0][x] == "1"
 
     print(res_o)
 
@@ -65,11 +68,14 @@ def solve_day3_p2(input_file: str) -> int:
             break
 
         for line in lines:
-            if line[ii] == '1':
+            if line[ii] == "1":
                 count1 += 1
 
-        lines = [x for x in lines if x[ii] == "1"] if count1 < len(
-            lines) / 2 else [x for x in lines if x[ii] == "0"]
+        lines = (
+            [x for x in lines if x[ii] == "1"]
+            if count1 < len(lines) / 2
+            else [x for x in lines if x[ii] == "0"]
+        )
 
         print(f"Step: {ii}")
         print("\n".join(lines))

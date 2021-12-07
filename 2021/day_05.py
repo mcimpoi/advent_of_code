@@ -37,7 +37,7 @@ def solve(input_file: str, keep_diagonals: bool = False) -> int:
 
         if not (dx * dy == 0 or keep_diagonals):
             continue
-        for step in range(max(abs(x1-x2), abs(y1 - y2)) + 1):
+        for step in range(max(abs(x1 - x2), abs(y1 - y2)) + 1):
             x, y = x1 + step * dx, y1 + step * dy
             flat_pos = x * OFFSET + y
             mapping[x * OFFSET + y] += 1

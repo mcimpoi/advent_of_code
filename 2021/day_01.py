@@ -7,7 +7,7 @@ def solve_day1_p1(input_file: str) -> int:
 
     cnt = 0
     for ii in range(1, len(depths)):
-        if (depths[ii] > depths[ii - 1]):
+        if depths[ii] > depths[ii - 1]:
             cnt += 1
     return cnt
 
