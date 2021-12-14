@@ -1,5 +1,3 @@
-from collections import defaultdict
-from io import DEFAULT_BUFFER_SIZE
 from typing import List, Tuple
 
 INPUT_FILE = "data/day_09.txt"
