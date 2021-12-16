@@ -56,9 +56,8 @@ def solve_dfs(matrix: List[List[int]]) -> int:
                 or adj_node[1] < 0
                 or adj_node[0] >= len(matrix)
                 or adj_node[1] >= len(matrix[0])
+                or adj_node in visited
             ):
-                continue
-            if adj_node in visited:
                 continue
 
             newCost = nodeCosts[node] + matrix[adj_node[0]][adj_node[1]]
