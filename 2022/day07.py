@@ -3,7 +3,7 @@ from io import DEFAULT_BUFFER_SIZE
 from typing import List, Tuple, Union, Optional, Dict
 from collections import deque
 
-INPUT_FILE: str = "2022/data/day_05.txt"
+INPUT_FILE: str = "2022/data/day_07.txt"
 MAX_DIR_SIZE: int = 100000
 
 class File:

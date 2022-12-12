@@ -3,7 +3,7 @@ from io import DEFAULT_BUFFER_SIZE
 from typing import List, Tuple, Union, Optional, Dict
 from collections import deque
 
-INPUT_FILE: str = "2022/data/day_06.txt"
+INPUT_FILE: str = "2022/data/day_08.txt"
 
 def parse_input(input_file: str) -> List[List[int]]:
     with open(input_file, "r") as f:
