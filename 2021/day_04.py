@@ -24,23 +24,21 @@ def solve_day4_p1(input_file: str) -> int:
 
         max_val = max(max_val, max(board))
 
-    print(len(board))
-    print(max_val)
+    return get_board_answer(first_line, boards)
 
-    for num in first_line:
+
+def get_board_answer(first_line_nums, boards):
+    for num in first_line_nums:
         for board in boards:
-            found = False
             for rr in range(BOARD_SZ):
                 for cc in range(BOARD_SZ):
                     if board[rr * BOARD_SZ + cc] == num:
                         board[rr * BOARD_SZ + cc] *= -1
-                        found = True
                         if check_board(board, rr, cc):
-                            print_board(board)
+                            # print_board(board)
                             return board_val(board, num)
                         break
-
-    return 0
+    return -1
 
 
 def solve_day4_p2(input_file: str) -> int:
@@ -61,26 +59,22 @@ def solve_day4_p2(input_file: str) -> int:
 
         max_val = max(max_val, max(board))
 
-    print(len(board))
-    print(max_val)
-
     winner = [0] * len(boards)
+    last_winner, last_num = -1, -1
 
     for num in first_line:
         for bb, board in enumerate(boards):
             if winner[bb]:
                 continue
-            found = False
+
             for rr in range(BOARD_SZ):
                 for cc in range(BOARD_SZ):
                     if board[rr * BOARD_SZ + cc] == num:
                         board[rr * BOARD_SZ + cc] *= -1
-                        found = True
                         if check_board(board, rr, cc):
                             winner[bb] = 1
                             last_winner, last_num = bb, num
 
-    print_board(boards[last_winner])
     return board_val(boards[last_winner], last_num)
 
 
