@@ -1,15 +1,15 @@
-from collections import defaultdict
-from io import DEFAULT_BUFFER_SIZE
-from typing import List, Tuple, Union, Optional, Dict
+from typing import List, Optional, Dict
 from collections import deque
 
 INPUT_FILE: str = "2022/data/day_07.txt"
 MAX_DIR_SIZE: int = 100000
 
+
 class File:
     def __init__(self, name: str, size: int) -> None:
         self.name = name
         self.size = size
+
 
 class Directory:
     def __init__(self, name: str, parent: Optional["Directory"]) -> None:
@@ -18,6 +18,7 @@ class Directory:
         self.files: List[File] = []
         self.parent: Optional[Directory] = parent
         self.updated = False
+
 
 def parse_input(input_file: str) -> Directory:
     with open(input_file, "r") as f:
@@ -56,6 +57,7 @@ def parse_input(input_file: str) -> Directory:
                 idx += 1
     return root
 
+
 def update_total_size(root: Directory) -> Directory:
     if root.updated:
         return root
@@ -66,30 +68,32 @@ def update_total_size(root: Directory) -> Directory:
     root.total_size = total_size
     return root
 
-def day_05_part1(input_file: str) -> int:
+
+def day_07_part1(input_file: str) -> int:
     root = parse_input(input_file)
     update_total_size(root.subdirs["/"])
-    
+
     q = deque()
     q.append(root.subdirs["/"])
-    total_sum = 0 
+    total_sum = 0
     while len(q) > 0:
         crt = q.pop()
         if crt.total_size <= MAX_DIR_SIZE:
             total_sum += crt.total_size
         for subdir in crt.subdirs:
-            q.append(crt.subdirs[subdir]) 
+            q.append(crt.subdirs[subdir])
 
     return total_sum
 
-def day_05_part2(input_file: str) -> int:
+
+def day_07_part2(input_file: str) -> int:
     SYSTEM_SIZE = 70000000
     NEEDED_FREE = 30000000
     root = parse_input(input_file)
     update_total_size(root.subdirs["/"])
     to_delete = NEEDED_FREE - (SYSTEM_SIZE - root.subdirs["/"].total_size)
 
-    q = deque( )   
+    q = deque()
     q.append(root.subdirs["/"])
     smallest_size = SYSTEM_SIZE
     while len(q) > 0:
@@ -97,10 +101,11 @@ def day_05_part2(input_file: str) -> int:
         if crt.total_size >= to_delete:
             smallest_size = min(smallest_size, crt.total_size)
         for subdir in crt.subdirs:
-            q.append(crt.subdirs[subdir]) 
+            q.append(crt.subdirs[subdir])
 
     return smallest_size
-    
-if __name__ == "__main__": 
-    print(day_05_part1(INPUT_FILE))
-    print(day_05_part2(INPUT_FILE))
+
+
+if __name__ == "__main__":
+    print(day_07_part1(INPUT_FILE))
+    print(day_07_part2(INPUT_FILE))
