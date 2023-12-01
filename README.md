@@ -3,8 +3,11 @@ My solutions for Advent of Code, starting 2020 (https://adventofcode.com/)
 Solutions posted after the competition took place.
 
 ----------------------------------------------------------
-Entirely optional -- join my private leaderboard:
-   1028193-47b34177 -- 200 spots only.
+
+Entirely optional -- join my private leaderboard (200 spots)
+ 
+   1028193-47b34177   
+   
 ----------------------------------------------------------
 
 These are my personal stats:
