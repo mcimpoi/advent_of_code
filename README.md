@@ -3,8 +3,19 @@ My solutions for Advent of Code, starting 2020 (https://adventofcode.com/)
 Solutions posted after the competition took place.
 
 ----------------------------------------------------------
+Entirely optional -- join my private leaderboard:
+   1028193-47b34177 -- 200 spots only.
+----------------------------------------------------------
 
 These are my personal stats:
+
+<h2> 2023 </h2>
+<pre>
+            -------Part 1--------   -------Part 2--------
+Day       Time  Rank  Score       Time  Rank  Score
+  1   00:03:49  1215      0   00:08:19   193      0
+</pre>
+
 
 <h2> 2022 </h2>
 <pre>
