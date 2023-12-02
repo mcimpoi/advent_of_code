@@ -17,6 +17,7 @@ These are my personal stats:
             -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
   1   00:03:49  1215      0   00:08:19   193      0
+  2   00:18:30  3973      0   00:22:52  3539      0
 </pre>
 
 
