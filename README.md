@@ -1,6 +1,10 @@
 My solutions for Advent of Code, starting 2020 (https://adventofcode.com/)
 
-Solutions posted after the competition took place.
+In the interest of fairness, I will commit solutions with at least 24 hour delay from the
+time the problem was published on the website. 
+
+2020 --> 2022: Python
+2023: Python during competition; Rust after; (C++ if I have time (unlikely), LISP in the README (joking (or am I?) (:))).
 
 ----------------------------------------------------------
 
