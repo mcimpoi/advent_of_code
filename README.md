@@ -17,9 +17,10 @@ Entirely optional -- join my private leaderboard (200 spots)
 These are my personal stats:
 
 <h2> 2023 </h2>
-<pre>
-      -------Part 1--------   -------Part 2--------
+<pre>      -------Part 1--------   -------Part 2--------
 Day       Time  Rank  Score       Time  Rank  Score
+  6   00:11:07  3223      0   00:14:16  2573      0
+  5   00:22:51  1789      0   02:50:47  6213      0
   4   00:07:28  1823      0   00:21:19  2464      0
   3   00:24:40  2219      0   00:28:46  1279      0
   2   00:18:30  3973      0   00:22:52  3539      0
