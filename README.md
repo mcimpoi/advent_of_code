@@ -4,7 +4,7 @@ In the interest of fairness, I will commit solutions with at least 24 hour delay
 time the problem was published on the website. 
 
 2020 --> 2022: Python
-2023: Python during competition; Rust after; (C++ if I have time (unlikely), [LISP](https://xkcd.com/297/)  in the README (joking (or am I?) (:))).
+2023: Python during competition; Rust after (C++ if I have time (unlikely), [LISP](https://xkcd.com/297/)  in the README (joking (or am I?) (:))).
 
 ----------------------------------------------------------
 
@@ -20,6 +20,9 @@ These are my personal stats:
 <pre>
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
+ 14   07:15:13  18641      0   08:21:22  12882      0
+ 13   04:19:25  11556      0       >24h  25519      0
+ 12   05:07:19  12489      0   15:51:29  12440      0
  11   01:05:53   7422      0   01:13:10   6154      0
  10   00:55:15   3828      0   10:05:23  13290      0
   9   02:14:55  12549      0   02:17:46  11972      0
