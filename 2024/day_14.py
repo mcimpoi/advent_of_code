@@ -65,6 +65,8 @@ def solve_day_14_part_2(fname, grid_size):
 
         skip = False
         grid = [[0 for _ in range(grid_size[1])] for _ in range(grid_size[0])]
+        # initially checked for 3 or more adjacent points.
+        # in the tree, the robots are at unique positions.
         for position in new_positions:
             grid[position[0]][position[1]] += 1
             if grid[position[0]][position[1]] > 1:
