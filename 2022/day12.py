@@ -47,7 +47,7 @@ def day_12_part1(input_file: str) -> int:
     return dist[dst_r][dst_c]
 
 
-def dfs(grid: list[str], src_r: int, src_c: int, dst_r: int, dst_c: int) -> int:
+def bfs(grid: list[str], src_r: int, src_c: int, dst_r: int, dst_c: int) -> int:
     dist = [[INF for _ in grid[0]] for _ in grid]
     dist[src_r][src_c] = 0
     n_rows = len(grid)
@@ -94,7 +94,7 @@ def day_12_part2(input_file: str) -> int:
     for rr in range(n_rows):
         for cc in range(n_cols):
             if grid[rr][cc] in "Sa":
-                min_path = min(min_path, dfs(grid, rr, cc, dst_r, dst_c))
+                min_path = min(min_path, bfs(grid, rr, cc, dst_r, dst_c))
     return min_path
 
 
