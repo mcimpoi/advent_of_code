@@ -1,12 +1,7 @@
-from collections import defaultdict
-from io import DEFAULT_BUFFER_SIZE
-from typing import Any, List, Tuple, Union, Optional, Dict
-from collections import deque
-
 INPUT_FILE: str = "2022/data/day_13.txt"
 
 
-def parse_inputs(input_file: str) -> List[Any]:
+def parse_inputs(input_file: str) -> list:
     with open(input_file, "r") as f:
         data = [x.strip() for x in f.readlines() if len(x.strip()) > 0]
 
@@ -29,7 +24,7 @@ def day_13_part1(input_file: str) -> int:
     return total
 
 
-def in_order(left: List, right: List) -> bool:
+def in_order(left: list, right: list) -> bool:
     if left is None and right is None:
         return True
     if left is None and right is not None:
@@ -63,7 +58,7 @@ def in_order(left: List, right: List) -> bool:
     return in_order(left[1:], right[1:])
 
 
-def day_13_part2(input_file: str) -> Tuple[int, int, int]:
+def day_13_part2(input_file: str) -> tuple[int, int, int]:
     pairs = parse_inputs(input_file)
 
     # print(in_order(eval("[7, 7]"), eval("[7]")))

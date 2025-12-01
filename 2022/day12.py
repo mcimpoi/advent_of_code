@@ -1,6 +1,3 @@
-from collections import defaultdict
-from io import DEFAULT_BUFFER_SIZE
-from typing import List, Tuple, Union, Optional, Dict
 from collections import deque
 
 INPUT_FILE: str = "2022/data/day_12.txt"
@@ -50,7 +47,7 @@ def day_12_part1(input_file: str) -> int:
     return dist[dst_r][dst_c]
 
 
-def dfs(grid: List[str], src_r: int, src_c: int, dst_r: int, dst_c: int) -> int:
+def dfs(grid: list[str], src_r: int, src_c: int, dst_r: int, dst_c: int) -> int:
     dist = [[INF for _ in grid[0]] for _ in grid]
     dist[src_r][src_c] = 0
     n_rows = len(grid)
@@ -86,7 +83,6 @@ def day_12_part2(input_file: str) -> int:
     n_rows = len(grid)
     n_cols = len(grid[0])
 
-    src_r, src_c = -1, -1
     dst_r, dst_c = -1, -1
 
     for rr in range(n_rows):

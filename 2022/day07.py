@@ -1,23 +1,25 @@
-from collections import defaultdict
-from io import DEFAULT_BUFFER_SIZE
-from typing import List, Tuple, Union, Optional, Dict
+from typing import Optional
 from collections import deque
 
 INPUT_FILE: str = "2022/data/day_07.txt"
 MAX_DIR_SIZE: int = 100000
+
 
 class File:
     def __init__(self, name: str, size: int) -> None:
         self.name = name
         self.size = size
 
+
 class Directory:
-    def __init__(self, name: str, parent: Optional["Directory"]) -> None:
+    def __init__(self, name: str, parent: "Directory" | None) -> None:
         self.total_size: int = 0
-        self.subdirs: Dict[str, Directory] = {}
-        self.files: List[File] = []
-        self.parent: Optional[Directory] = parent
+        self.subdirs: dict[str, Directory] = {}
+        self.files: list[File] = []
+        self.parent: Directory | None = parent
         self.updated = False
+        self.name = name
+
 
 def parse_input(input_file: str) -> Directory:
     with open(input_file, "r") as f:
@@ -25,14 +27,12 @@ def parse_input(input_file: str) -> Directory:
     root = Directory("<ROOT>", None)
     root.subdirs["/"] = Directory("/", None)
     idx = 0
-    crt_path = []
     crt_dir = root
 
     while idx < len(lines):
         if lines[idx].startswith("$ cd"):
             dir_name = lines[idx][5:]
             if dir_name == "..":
-                # crt_path.pop()
                 crt_dir = crt_dir.parent if crt_dir is not None else root
             else:
                 if crt_dir is None:
@@ -56,6 +56,7 @@ def parse_input(input_file: str) -> Directory:
                 idx += 1
     return root
 
+
 def update_total_size(root: Directory) -> Directory:
     if root.updated:
         return root
@@ -64,43 +65,47 @@ def update_total_size(root: Directory) -> Directory:
         update_total_size(root.subdirs[subdir])
         total_size += root.subdirs[subdir].total_size
     root.total_size = total_size
+    root.updated = True
     return root
 
-def day_05_part1(input_file: str) -> int:
+
+def day_07_part1(input_file: str) -> int:
     root = parse_input(input_file)
     update_total_size(root.subdirs["/"])
-    
+
     q = deque()
     q.append(root.subdirs["/"])
-    total_sum = 0 
-    while len(q) > 0:
+    total_sum = 0
+    while q:
         crt = q.pop()
         if crt.total_size <= MAX_DIR_SIZE:
             total_sum += crt.total_size
         for subdir in crt.subdirs:
-            q.append(crt.subdirs[subdir]) 
+            q.append(crt.subdirs[subdir])
 
     return total_sum
 
-def day_05_part2(input_file: str) -> int:
+
+def day_07_part2(input_file: str) -> int:
     SYSTEM_SIZE = 70000000
     NEEDED_FREE = 30000000
     root = parse_input(input_file)
     update_total_size(root.subdirs["/"])
     to_delete = NEEDED_FREE - (SYSTEM_SIZE - root.subdirs["/"].total_size)
 
-    q = deque( )   
+    q = deque()
     q.append(root.subdirs["/"])
     smallest_size = SYSTEM_SIZE
-    while len(q) > 0:
+    while q:
         crt = q.pop()
         if crt.total_size >= to_delete:
             smallest_size = min(smallest_size, crt.total_size)
         for subdir in crt.subdirs:
-            q.append(crt.subdirs[subdir]) 
+            q.append(crt.subdirs[subdir])
 
     return smallest_size
-    
-if __name__ == "__main__": 
-    print(day_05_part1(INPUT_FILE))
-    print(day_05_part2(INPUT_FILE))
+
+
+if __name__ == "__main__":
+    print(day_07_part1(INPUT_FILE))
+    print(day_07_part2(INPUT_FILE))
