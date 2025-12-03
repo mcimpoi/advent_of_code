@@ -17,10 +17,12 @@ Entirely optional -- join my private leaderboard (200 spots)
 These are my personal times by year: [2025](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2025-) | [2024](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2024-) | [2023](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2023-) | [2022](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2022-) | [2021](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2021-) | [2020](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2020-)
 
 <h2> 2025 </h2>
+<pre>
 Day   -Part 1-   -Part 2-
   3   00:11:34   00:24:58
   2   00:12:07   00:20:00
   1   00:07:50   00:17:55
+</pre>
 
 <h2> 2024 </h2>
 <pre>   
