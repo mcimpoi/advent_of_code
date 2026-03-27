@@ -1,10 +1,11 @@
 My solutions for Advent of Code, starting 2020 (https://adventofcode.com/)
 
 In the interest of fairness, I will commit solutions with at least 24 hour delay from the
-time the problem was published on the website. 
+time the problem was published on the website. Since 2024, my competition submissions are my own work, with minimal LLM or coding agent assistance. 
 
-2020 --> 2022: Python
-2023: Python during competition; Rust after (C++ if I have time (unlikely), [LISP](https://xkcd.com/297/)  in the README (joking (or am I?) (:))).
+2020–2025: Python (in Colab during competition; polished for this repo).
+2023: also attempted Rust after competition (C++ was planned (spoiler: didn't happen), [LISP](https://xkcd.com/297/)  in the README (was I joking? (or not?) (:))).
+Some of the solutions in this repo were refined with Claude and Gemini, primarily for code review and cleanup.
 
 ----------------------------------------------------------
 
@@ -14,9 +15,11 @@ Entirely optional -- join my private leaderboard (200 spots)
    
 ----------------------------------------------------------
 
-These are my personal times by year: [2025](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2025-) | [2024](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2024-) | [2023](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2023-) | [2022](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2022-) | [2021](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2021-) | [2020](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2020-)
+These are my personal times by year (2⭐ per day, 50⭐ max in 2020-2024; 24⭐ max in 2025):
 
-<h2> 2025 </h2>
+[2025](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2025-) 19⭐/24  | [2024](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2024-) 46⭐/50  | [2023](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2023-) 34⭐/50 | [2022](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2022-) 21⭐/50  | [2021](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2021-) 33⭐/50 | [2020](https://github.com/mcimpoi/advent_of_code?tab=readme-ov-file#-2020-) 38⭐/50
+
+<h2> 2025 </h2> 19⭐/24
 <pre>
 Day   -Part 1-   -Part 2-
  11   07:56:39          -
@@ -32,7 +35,7 @@ Day   -Part 1-   -Part 2-
   1   00:07:50   00:17:55
 </pre>
 
-<h2> 2024 </h2>
+<h2> 2024 </h2> 46⭐/50 
 <pre>   
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
@@ -64,7 +67,8 @@ Day       Time   Rank  Score       Time   Rank  Score
 </pre>
 
 
-<h2> 2023 </h2>
+<h2> 2023 </h2> 34⭐/50
+
 <pre>
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
@@ -88,7 +92,7 @@ Day       Time   Rank  Score       Time   Rank  Score
   1   00:03:49   1215      0   00:08:19    193      0
 </pre>
 
-<h2> 2022 </h2>
+<h2> 2022 </h2> 21⭐/50
 <pre>
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
@@ -104,7 +108,7 @@ Day       Time   Rank  Score       Time   Rank  Score
   2   00:31:07  11690      0   00:43:18  11387      0
   1   02:08:24  19252      0   02:10:49  18171      0
 </pre>
-<h2> 2021 </h2>
+<h2> 2021 </h2> 33⭐/50
 <pre>
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
@@ -126,7 +130,7 @@ Day       Time   Rank  Score       Time   Rank  Score
   2   01:55:27  20878      0   02:01:42  19862      0
   1   02:12:20  15469      0   02:19:32  13789      0
 </pre>  
-<h2> 2020 </h2>
+<h2> 2020 </h2> 38⭐/50
 <pre>
       --------Part 1--------   --------Part 2--------
 Day       Time   Rank  Score       Time   Rank  Score
